@@ -2,7 +2,8 @@
   "name": "dsh-profile-web",
   "private": true,
   "dependencies": {
-    "@linxin666/dsh-web-all": "^0.3.3",
+    "@linxin666/dsh-web-all": "^0.3.4",
+    "@yuxianglin/dsh-bridge-browser": "link:C:/Users/Admin/.dsh/dsh-browser/packages/browser/bridge-browser",
     "dsh-deja": "^0.20.3",
     "dsh-find-plugin": "^0.3.7",
     "dsh-token-stats": "github:H1a3x/dsh-token-stats"
@@ -14,7 +15,8 @@
         "@deepseek-ai/dsh-web-app",
         "@linxin666/dsh-web-all",
         "dsh-find-plugin",
-        "dsh-deja"
+        "dsh-deja",
+        "@yuxianglin/dsh-bridge-browser"
       ]
     }
   }

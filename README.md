@@ -14,6 +14,7 @@
 | `dsh-deja` | npm | 跨会话记忆/Deja 插件 |
 | `dsh-find-plugin` | npm | 插件查找 |
 | `dsh-token-stats` | `github:H1a3x/dsh-token-stats` | 浮动 Token 用量统计面板 |
+| `@yuxianglin/dsh-bridge-browser` | 本地 link | DSH 浏览器桥接(依赖 `~/.dsh/dsh-browser`,见下方注意事项) |
 
 ---
 
@@ -77,11 +78,29 @@ pnpm install
 
 ---
 
+## DSH 桌面版启动器
+
+随本仓库同步的桌面快捷启动工具:一键后台启动 DSH 服务,并以 Chrome 独立应用窗口打开 Web 界面(无地址栏/标签页,类似桌面 App)。代码在 `desktop-launcher/` 目录。
+
+在每台电脑上安装:
+
+```powershell
+cd ~/.dsh/profiles/web/desktop-launcher
+powershell -NoProfile -ExecutionPolicy Bypass -File install.ps1
+```
+
+- 脚本会自动识别 DSH 部署目录并写入本机配置(`~/.dsh/desktop-launcher/machine-config.ps1`,不入库);若路径不同,加参数 `-RepoPath "你的部署路径"`。
+- 安装后桌面出现「DSH 桌面版」「DSH 停止服务」两个快捷方式。
+- 详细说明见 [`desktop-launcher/README.md`](desktop-launcher/README.md)。
+
+---
+
 ## 注意事项
 
 - **不要提交 `node_modules/`**：本仓库只保存配置，插件由 `pnpm install` 还原。
 - **敏感信息**：如果以后在 `cordis.patch.yml` 或 `cordis.yml` 中写入了 API key、token 等敏感内容，请谨慎提交；必要时改用环境变量或本地覆盖文件。
 - **重启 DSH**：安装/更新/修改 client 插件后，通常需要**重启 DSH 服务并刷新浏览器页面**才能生效。
+- **`@yuxianglin/dsh-bridge-browser` 是本地 link 依赖**：`package.json` 中记录的是 `link:C:/Users/Admin/.dsh/dsh-browser/...`。换机器后如果路径不同,请把该行改为新机器上的实际路径(或相对路径 `link:../../dsh-browser/packages/browser/bridge-browser`,要求 `dsh-browser` 安装在 `~/.dsh/dsh-browser`),再执行 `pnpm install`。
 
 ---
 
