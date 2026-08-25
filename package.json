@@ -1,0 +1,21 @@
+{
+  "name": "dsh-profile-web",
+  "private": true,
+  "dependencies": {
+    "@linxin666/dsh-web-all": "^0.3.3",
+    "dsh-deja": "^0.20.3",
+    "dsh-find-plugin": "^0.3.7",
+    "dsh-token-stats": "github:H1a3x/dsh-token-stats"
+  },
+  "dsh": {
+    "profile": {
+      "bundles": [
+        "@deepseek-ai/dsh-base",
+        "@deepseek-ai/dsh-web-app",
+        "@linxin666/dsh-web-all",
+        "dsh-find-plugin",
+        "dsh-deja"
+      ]
+    }
+  }
+}

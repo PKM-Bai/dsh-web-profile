@@ -1,0 +1,3 @@
+# DSH web profile — do not commit installed packages
+node_modules/
+*.log
