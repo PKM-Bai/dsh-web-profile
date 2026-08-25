@@ -6,7 +6,8 @@
     "@yuxianglin/dsh-bridge-browser": "link:C:/Users/Admin/.dsh/dsh-browser/packages/browser/bridge-browser",
     "dsh-deja": "^0.20.3",
     "dsh-find-plugin": "^0.3.7",
-    "dsh-token-stats": "github:H1a3x/dsh-token-stats"
+    "dsh-token-stats": "github:H1a3x/dsh-token-stats",
+    "dsh-weekly-report": "link:E:/GitProject/pkm-bai-deepseek-harness/packages/extensions/weekly-report"
   },
   "dsh": {
     "profile": {
@@ -16,7 +17,8 @@
         "@linxin666/dsh-web-all",
         "dsh-find-plugin",
         "dsh-deja",
-        "@yuxianglin/dsh-bridge-browser"
+        "@yuxianglin/dsh-bridge-browser",
+        "dsh-weekly-report"
       ]
     }
   }

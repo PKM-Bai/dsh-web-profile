@@ -23,6 +23,9 @@ importers:
       dsh-token-stats:
         specifier: github:H1a3x/dsh-token-stats
         version: https://codeload.github.com/H1a3x/dsh-token-stats/tar.gz/189ddfc3f233bb7d8e3c6fc77201f2f54854de57
+      dsh-weekly-report:
+        specifier: link:E:/GitProject/pkm-bai-deepseek-harness/packages/extensions/weekly-report
+        version: link:E:/GitProject/pkm-bai-deepseek-harness/packages/extensions/weekly-report
 
 packages:
 
