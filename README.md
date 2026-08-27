@@ -101,10 +101,10 @@ DSH 的历史会话、任务台账、附件可通过私有仓库 [PKM-Bai/dsh-se
 
 ```powershell
 # 换机前: 把本机会话推到远端 (本机缓冲仓库: E:\DSH-Sessions, 放 E 盘省 C 盘空间)
-powershell -NoProfile -ExecutionPolicy Bypass -File ~\.dsh\profiles\web\tools\sync-sessions.ps1 -Push
+powershell -NoProfile -ExecutionPolicy Bypass -File "$HOME\.dsh\profiles\web\tools\sync-sessions.ps1" -Push
 
 # 换机后: 把远端会话拉到本机
-powershell -NoProfile -ExecutionPolicy Bypass -File ~\.dsh\profiles\web\tools\sync-sessions.ps1 -Pull
+powershell -NoProfile -ExecutionPolicy Bypass -File "$HOME\.dsh\profiles\web\tools\sync-sessions.ps1" -Pull
 ```
 
 - 约定:同一时间只在一台电脑运行 DSH;建议先停止 DSH 服务再同步(脚本会提示,`-Force` 可跳过)。

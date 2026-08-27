@@ -1,4 +1,4 @@
-﻿# ============================================================
+# ============================================================
 #  DSH 会话同步脚本 (Session Sync) — git 方案
 #
 #  私有仓库缓冲 DSH 的会话/存储/任务台账/附件, 在 家用/公司 两台电脑间同步。
@@ -54,7 +54,10 @@ function Get-Branch {
 function Sync-Mirror([string]$src, [string]$dst) {
     if (-not (Test-Path $src)) { Write-Host "跳过 (本机不存在): $src"; return }
     New-Item -ItemType Directory -Force -Path $dst | Out-Null
-    robocopy $src $dst /MIR /NFL /NDL /NJH /NJS /NP | Out-Null
+    # 注意: 不用 /MIR (镜像+删除)。/MIR 会把"目标有而源没有"的文件删掉,
+    # 换机同步时一台机器的数据目录没有另一台机器的工作区, 一 Push 就会把对方
+    # 的会话从缓冲仓库里抹掉 (曾导致数据丢失)。只复制/覆盖、永不删除。
+    robocopy $src $dst /E /NFL /NDL /NJH /NJS /NP | Out-Null
     if ($LASTEXITCODE -ge 8) { throw "robocopy 失败: $src -> $dst (exit $LASTEXITCODE)" }
     Write-Host "已镜像: $src"
 }

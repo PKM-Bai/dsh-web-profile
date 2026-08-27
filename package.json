@@ -3,11 +3,13 @@
   "private": true,
   "dependencies": {
     "@linxin666/dsh-web-all": "^0.3.4",
-    "@yuxianglin/dsh-bridge-browser": "link:C:/Users/Admin/.dsh/dsh-browser/packages/browser/bridge-browser",
+    "@yuxianglin/dsh-bridge-browser": "link:C:/Users/Administrator/.dsh/dsh-browser/packages/browser/bridge-browser",
+    "dsh-cost-meter": "^1.5.42",
     "dsh-deja": "^0.20.3",
     "dsh-find-plugin": "^0.3.7",
     "dsh-token-stats": "github:H1a3x/dsh-token-stats",
-    "dsh-weekly-report": "link:E:/GitProject/pkm-bai-deepseek-harness/packages/extensions/weekly-report"
+    "dsh-vision-router": "^1.7.7",
+    "dsh-weekly-report": "link:E:/GitHub/deepseek-harness/packages/extensions/weekly-report"
   },
   "dsh": {
     "profile": {
@@ -18,7 +20,9 @@
         "dsh-find-plugin",
         "dsh-deja",
         "@yuxianglin/dsh-bridge-browser",
-        "dsh-weekly-report"
+        "dsh-weekly-report",
+        "dsh-vision-router",
+        "dsh-cost-meter"
       ]
     }
   }
