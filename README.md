@@ -15,6 +15,9 @@
 | `dsh-find-plugin` | npm | 插件查找 |
 | `dsh-token-stats` | `github:H1a3x/dsh-token-stats` | 浮动 Token 用量统计面板 |
 | `@yuxianglin/dsh-bridge-browser` | 本地 link | DSH 浏览器桥接(依赖 `~/.dsh/dsh-browser`,见下方注意事项) |
+| `dsh-weekly-report` | 本地 link | 周报总结插件(链接 `deepseek-harness/packages/extensions/weekly-report`) |
+| `dsh-vision-router` | npm | 视觉路由/结构化视觉分析工具 |
+| `dsh-cost-meter` | npm | Token/API 成本计量面板 |
 
 ---
 
@@ -109,7 +112,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "$HOME\.dsh\profiles\web\too
 
 - 约定:同一时间只在一台电脑运行 DSH;建议先停止 DSH 服务再同步(脚本会提示,`-Force` 可跳过)。
 - 缓冲仓库路径可用 `-RepoPath` 覆盖(如公司机器放 `D:\DSH-Sessions`)。
-- 同步内容:`sessions/`、`storages/`、`task-board/`、`attachments/`。
+- 同步内容:`sessions/`、`storages/`、`task-board/`、`attachments/`、`weekly-report/`。
 
 ---
 
@@ -118,6 +121,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "$HOME\.dsh\profiles\web\too
 - **不要提交 `node_modules/`**：本仓库只保存配置，插件由 `pnpm install` 还原。
 - **敏感信息**：如果以后在 `cordis.patch.yml` 或 `cordis.yml` 中写入了 API key、token 等敏感内容，请谨慎提交；必要时改用环境变量或本地覆盖文件。
 - **重启 DSH**：安装/更新/修改 client 插件后，通常需要**重启 DSH 服务并刷新浏览器页面**才能生效。
+- **`dsh-weekly-report` 也是本地 link 依赖**:`package.json` 记录的是 `link:E:/GitHub/deepseek-harness/packages/extensions/weekly-report`。换机器后请改为新机器上的实际路径,再执行 `pnpm install`。
 - **`@yuxianglin/dsh-bridge-browser` 是本地 link 依赖**：`package.json` 中记录的是 `link:C:/Users/Admin/.dsh/dsh-browser/...`。换机器后如果路径不同,请把该行改为新机器上的实际路径(或相对路径 `link:../../dsh-browser/packages/browser/bridge-browser`,要求 `dsh-browser` 安装在 `~/.dsh/dsh-browser`),再执行 `pnpm install`。
 
 ---
