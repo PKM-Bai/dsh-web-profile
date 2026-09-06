@@ -1,4 +1,4 @@
-﻿# ============================================================
+# ============================================================
 #  DSH 桌面版启动器 (DeepSeek Harness Desktop Launcher)
 #  便携版: 随 dsh-web-profile 仓库同步, 家用/公司两台电脑共用
 #  流程: 1) 服务未运行则后台启动  2) 等待就绪  3) Chrome 独立窗口
@@ -99,7 +99,7 @@ if (-not (Test-PortListen)) {
     $env:DSH_HOME = $DshHome
     try {
         Start-Process -FilePath $nodeExe `
-            -ArgumentList @('--import', 'tsx/esm', 'apps/cli/src/bin.ts', 'web') `
+            -ArgumentList @('--import', 'tsx/esm', 'apps/cli/src/bin.ts', 'web', '--trusted-host', 'dsh-work.pkm-bai.de') `
             -WorkingDirectory $Repo `
             -WindowStyle Hidden `
             -RedirectStandardOutput $outLog `
